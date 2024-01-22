@@ -208,18 +208,17 @@ html {
     .service-title-text {
         color: var(--Color-4);
         margin: 10px;
-        transition: background-color 0.3s ease;
-        margin: 10px;
     }
 
     .service-title-p {
         color: var(--Color-4);
         border: 2px solid var(--Color-3);
         border-radius: 5px;
-        padding-top: 5px;
+        padding: 5px;
         background-color: var(--Color-1);
         margin: 10px 5px 10px 5px;
         text-align: justify;
+        
     }
 
     .service-title-p:hover {
@@ -254,15 +253,13 @@ html {
     .staff-title {
         color: var(--Color-4);
         margin: 10px;
-        transition: background-color 0.3s ease;
-        margin: 10px;
     }
 
     .staff-text {
         color: var(--Color-4);
         border: 2px solid var(--Color-3);
         border-radius: 5px;
-        padding-top: 5px;
+        padding: 5px;
         background-color: var(--Color-1);
         margin: 10px 5px 10px 5px;
         text-align: justify;
@@ -284,14 +281,18 @@ html {
         overflow-x: hidden;
         border: 2px solid var(--Color-3);
         border-radius: 3px;
+        transition: opacity 0.5s ease-in-out; 
+    }
+
+    .staff-img:not(:first-child) {
+        opacity: 0; 
     }
 
 
     .contact-title {
         color: var(--Color-4);
         margin: 10px;
-        transition: background-color 0.3s ease;
-        margin: 10px;
+        
     }
     
 
@@ -307,7 +308,8 @@ html {
 
     .address-a, .address-span {
         color: var(--Color-4);
-        padding: 5px;
+        padding-left: 20px;
+        display: block;
     }
 
     .contact-img {
@@ -338,6 +340,7 @@ html {
 
     .cc {
         color: var(--Color-4);
+        padding-left: 10px;
     }
 
     .Divider-lng {
@@ -346,15 +349,10 @@ html {
 
     .privacy {
         color: var(--Color-4);
+        padding-left: 10px;
     }
 
-    .address-a {
-        color: var(--Color-4);
-    }
 
-    .address-span {
-        color: var(--Color-4);
-    }
 }
 
 /**/
@@ -367,9 +365,6 @@ html {
         display: none;
     }
 
-    .header {
-        background-color: rgb(202, 137, 199);
-    }
 
     
 
