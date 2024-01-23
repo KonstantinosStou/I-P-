@@ -182,6 +182,8 @@ html {
     .poster-title {
         color: var(--Color-4);
         margin: 10px;
+        display: flex;
+        justify-content: center;
     }
     
     .poster-img {
@@ -208,6 +210,8 @@ html {
     .service-title-text {
         color: var(--Color-4);
         margin: 10px;
+        display: flex;
+        justify-content: center;
     }
 
     .service-title-p {
@@ -253,6 +257,8 @@ html {
     .staff-title {
         color: var(--Color-4);
         margin: 10px;
+        display: flex;
+        justify-content: center;
     }
 
     .staff-text {
@@ -267,6 +273,20 @@ html {
 
     .staff-text:hover {
         background-color: var(--Color-3);
+    }
+
+    .gallery-title {
+        color: var(--Color-4);
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .staff-li {
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
     }
 
     .staff-el {
@@ -284,6 +304,22 @@ html {
         transition: opacity 0.5s ease-in-out; 
     }
 
+    .staff-name {
+        color: var(--Color-4);
+        border: 2px solid var(--Color-3);
+        border-radius: 5px;
+        padding-top: 5px;
+        background-color: var(--Color-1);
+        margin: 10px 5px 10px 5px;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+    }
+
+    .staff-name:hover {
+        background-color: var(--Color-3);
+    }
+
     .staff-img:not(:first-child) {
         opacity: 0; 
     }
@@ -292,7 +328,8 @@ html {
     .contact-title {
         color: var(--Color-4);
         margin: 10px;
-        
+        display: flex;
+        justify-content: center;
     }
     
 

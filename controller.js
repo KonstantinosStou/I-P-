@@ -26,6 +26,8 @@ const newTexts2 = ["Headlight defogging","Car paintjob","waxing","10 paint space
 
 const staffTitle = document.querySelector('.staff-title');
 const staffText = document.querySelector('.staff-text');
+const galleryTitle = document.querySelector('.gallery-title');
+
 
 const contactTitle = document.querySelector('.contact-title');
 const privacy = document.querySelector('.privacy');
@@ -44,6 +46,7 @@ const originalValues = {
     servicePosterTextElements: Array.from(servicePosterTextElements).map(servicePosterText => servicePosterText.innerText),
     staffTitle: staffTitle.innerText,
     staffText: staffText.innerText,
+    galleryTitle: galleryTitle.innerText,
     contactTitle: contactTitle.innerText,
     privacy: privacy.innerText,
     companyName: companyName.innerText,
@@ -176,6 +179,7 @@ const navbarLang = function(element) {
       //serviceLearnMore.innerText = 'Learn more';
       staffTitle.innerText = 'EXPERIENCED STAFF';
       staffText.innerText = 'With many years of experience in the fields of car bodywork and painting, our store staff is ready to serve you.';
+      galleryTitle.innerText = 'GALLERY';
 
       contactTitle.innerText = 'CONTACT US';
       privacy.innerText = 'Privacy Policy';
