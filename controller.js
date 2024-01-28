@@ -26,11 +26,11 @@ const newTexts2 = ["Headlight defogging","Car paintjob","waxing","10 paint space
 
 const staffTitle = document.querySelector('.staff-title');
 const staffText = document.querySelector('.staff-text');
-const gallery = document.querySelector('.gallery');
-const galleryTitle = document.querySelector('.gallery-title');
+//const gallery = document.querySelector('.gallery');
+//const galleryTitle = document.querySelector('.gallery-title');
 
 
-const contactTitle = document.querySelector('.contact-title');
+const contactTitle = document.querySelector('.contact-title-a');
 const privacy = document.querySelector('.privacy');
 const companyName = document.querySelector('.cc');
 const adressSpan = document.querySelector('.address-span');
@@ -181,7 +181,7 @@ const navbarLang = function(element) {
       //serviceLearnMore.innerText = 'Learn more';
       staffTitle.innerText = 'EXPERIENCED STAFF';
       staffText.innerText = 'With many years of experience in the fields of car bodywork and painting, our store staff is ready to serve you.';
-      galleryTitle.innerText = 'GALLERY';
+      //galleryTitle.innerText = 'GALLERY';
 
       contactTitle.innerText = 'CONTACT US';
       privacy.innerText = 'Privacy Policy';
@@ -237,3 +237,4 @@ const intervalId1 = slideshow(document.querySelector('.staff-list li:nth-child(1
 
 // Run slideshow for the second <li> element
 //const intervalId2 = slideshow(document.querySelector('.staff-list li:nth-child(2)'), 7, 12, 3000);
+console.log(contactTitle.innerText);
