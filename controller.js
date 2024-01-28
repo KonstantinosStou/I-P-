@@ -26,6 +26,7 @@ const newTexts2 = ["Headlight defogging","Car paintjob","waxing","10 paint space
 
 const staffTitle = document.querySelector('.staff-title');
 const staffText = document.querySelector('.staff-text');
+const gallery = document.querySelector('.gallery');
 const galleryTitle = document.querySelector('.gallery-title');
 
 
@@ -46,7 +47,7 @@ const originalValues = {
     servicePosterTextElements: Array.from(servicePosterTextElements).map(servicePosterText => servicePosterText.innerText),
     staffTitle: staffTitle.innerText,
     staffText: staffText.innerText,
-    galleryTitle: galleryTitle.innerText,
+    //galleryTitle: galleryTitle.innerText,
     contactTitle: contactTitle.innerText,
     privacy: privacy.innerText,
     companyName: companyName.innerText,
@@ -60,6 +61,7 @@ const elementsToToggle = [
   document.querySelector('.service-area'),
   document.querySelector('.staff-area'),
   document.querySelector('.contact-us-container'),
+  //document.querySelector('.gallery')
   //document.querySelector('.footer')
 ];
 
@@ -201,7 +203,7 @@ const slideshow = (element, startNumber, endNumber, interval) => {
 
   const updateImage = () => {
       const img = element.querySelector('.staff-img');
-      img.src = `p&i staff-${currentNumber}.png`;
+      img.src = `p&i staff-${currentNumber}.jpg`;
 
       // Increment or decrement the currentNumber based on the direction
       if (isForward) {
@@ -234,4 +236,4 @@ const slideshow = (element, startNumber, endNumber, interval) => {
 const intervalId1 = slideshow(document.querySelector('.staff-list li:nth-child(1)'), 1, 6, 3000);
 
 // Run slideshow for the second <li> element
-const intervalId2 = slideshow(document.querySelector('.staff-list li:nth-child(2)'), 7, 12, 3000);
+//const intervalId2 = slideshow(document.querySelector('.staff-list li:nth-child(2)'), 7, 12, 3000);
