@@ -122,27 +122,13 @@ html {
         margin-top: 20px;
     }
 
-    .navbar-span-1 {
+    .navbar-span-1, .navbar-span-2, .navbar-span-3 {
         border-bottom: 2px solid var(--Color-5); 
         display: block;
         padding-left: 50px;
         font-size: 30px;
     }
 
-    .navbar-span-2 {
-        border-bottom: 2px solid var(--Color-5); 
-        display: block;
-        padding-left: 50px;
-        font-size: 30px;
-    }
-
-    .navbar-span-3 {
-        border-bottom: 2px solid var(--Color-5); 
-        display: block;
-        padding-left: 50px;
-        font-size: 30px;
-    }
-    
     .navbar-mob-down-arrow {
         margin-left: 120px;
     }
@@ -151,33 +137,20 @@ html {
         padding-left: 70px;
     }
 
-    .GR-a-mobile {
+    .GR-a-mobile, .EN-a-mobile {
         border-bottom: 2px solid var(--Color-5); 
         display: block;
         padding-left: 50px;
         font-size: 30px;
     }
 
-    .EN-a-mobile {
-        border-bottom: 2px solid var(--Color-5); 
-        display: block;
-        padding-left: 50px;
-        font-size: 30px;
-    }
-    
-    .ig-link-mobile {
+    .ig-link-mobile, .fb-link-mobile {
         border-bottom: 2px solid var(--Color-5);
         display: block;
         padding-left: 50px;
         font-size: 30px;
     }
 
-    .fb-link-mobile {
-        border-bottom: 2px solid var(--Color-5);
-        display: block;
-        padding-left: 50px;
-        font-size: 30px;
-    }
 
     .poster-title {
         color: var(--Color-4);

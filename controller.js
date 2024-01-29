@@ -1,13 +1,13 @@
 
-/*
-
-*/
 // Declarations
 const navBarIco = document.querySelector('.navbar-icon');
 const dropdownMenu = document.querySelector('.dropdown-mob-sec');
 const navBar1 = document.querySelector('.navbar-span-1');
 const navBar2 = document.querySelector('.navbar-span-2');
 const navBar3 = document.querySelector('.navbar-span-3');
+const navBig1 = document.querySelector('#nav1');
+const navBig2 = document.querySelector('#nav2');
+const navBig3 = document.querySelector('#nav3');
 const serviceArea = document.querySelector('.service-area');
 const staffArea = document.querySelector('.staff-area');
 const contactArea = document.querySelector('.contact-us-container');
@@ -73,7 +73,7 @@ function init() {
 
 init();
 
-// Function to control navigation on mobile
+// Function to control mobile navigation visibility
 function controlNavMob() {
   try {
     dropdownMenu.classList.toggle('hidden');
@@ -92,24 +92,21 @@ function controlNavMobHandler() {
 
 controlNavMobHandler();
 
-//function to control navbar mobile section taps 
+//function to control navbar mobile section navigation taps 
 const navbarItem = function(element) {
   element.addEventListener('click', function () {
-    // First empty if statement
     if (element === navBar1) {
       dropdownMenu.classList.add('hidden');
       elementsToToggle.forEach(element => element.classList.remove('hidden'));
       serviceArea.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Second empty if statement
     if (element === navBar2) {
       dropdownMenu.classList.add('hidden');
       elementsToToggle.forEach(element => element.classList.remove('hidden'));
       staffArea.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Third empty if statement
     if (element === navBar3) {
       dropdownMenu.classList.add('hidden');
       elementsToToggle.forEach(element => element.classList.remove('hidden'));
@@ -195,7 +192,7 @@ navbarLang(grBtnMob);
 navbarLang(enBtnMob);
 console.log(adressSpan.innerText);
 
-//////////
+//Slideshow for the staff area
 
 const slideshow = (element, startNumber, endNumber, interval) => {
   let currentNumber = startNumber;
@@ -237,4 +234,23 @@ const intervalId1 = slideshow(document.querySelector('.staff-list li:nth-child(1
 
 // Run slideshow for the second <li> element
 //const intervalId2 = slideshow(document.querySelector('.staff-list li:nth-child(2)'), 7, 12, 3000);
-console.log(contactTitle.innerText);
+
+const scrollIntoViewPc = function(element) {
+  element.addEventListener('click', function () {
+    if (element === navBig1) {
+      serviceArea.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if (element === navBig2) {
+      staffArea.scrollIntoView({behavior: 'smooth'})
+    }
+
+    if (element === navBig3) {
+      contactArea.scrollIntoView({behavior: 'smooth'})
+    }
+  }
+)};
+
+scrollIntoViewPc(navBig1);
+scrollIntoViewPc(navBig2);
+scrollIntoViewPc(navBig3);
