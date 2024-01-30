@@ -7,11 +7,12 @@
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
     /*COLORS*/
-    --Color-1: #e64b57;
-    --Color-2: #5e5f63;
+    --Color-1: #ff4545d8;
+    --Color-2: #c95353;
     --Color-3: #9b000d;
     --Color-4: aliceblue;
     --Color-5: #0a0a00;
+    --Color-6: #005358;
 }
 
 * {
@@ -152,7 +153,7 @@ html {
     }
 
 
-    .poster-title {
+    .poster-title, .service-title-text, .staff-title, .contact-title {
         color: var(--Color-4);
         margin: 10px;
         display: flex;
@@ -180,12 +181,6 @@ html {
         background-color: var(--Color-3);
     }
 
-    .service-title-text {
-        color: var(--Color-4);
-        margin: 10px;
-        display: flex;
-        justify-content: center;
-    }
 
     .service-title-p {
         color: var(--Color-4);
@@ -202,7 +197,7 @@ html {
         background-color: var(--Color-3);
     }
 
-    .service-poster-text {
+    .service-poster-text, .staff-text {
         color: var(--Color-4);
         border: 2px solid var(--Color-3);
         border-radius: 5px;
@@ -227,44 +222,11 @@ html {
         margin-top: 10px;
     }
 
-    .staff-title {
-        color: var(--Color-4);
-        margin: 10px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .staff-text {
-        color: var(--Color-4);
-        border: 2px solid var(--Color-3);
-        border-radius: 5px;
-        padding-top: 5px;
-        background-color: var(--Color-1);
-        margin: 10px 5px 10px 5px;
-        text-align: justify;
-        display: flex;
-        justify-content: center;
-    }
-
     .staff-text:hover {
         background-color: var(--Color-3);
     }
 
-    /*.gallery-title {
-        color: var(--Color-4);
-        margin: 10px;
-        display: flex;
-        justify-content: center;
-    }*/
-
-    .staff-li {
-        padding: 0px;
-        display: flex;
-        justify-content: center;
-        margin: 10px;
-    }
-
-    .staff-el {
+    .staff-li, .staff-el {
         padding: 0px;
         display: flex;
         justify-content: center;
@@ -280,18 +242,6 @@ html {
         max-height: 246px;
     }
 
-    /*.staff-name {
-        color: var(--Color-4);
-        border: 2px solid var(--Color-3);
-        border-radius: 5px;
-        padding-top: 5px;
-        background-color: var(--Color-1);
-        margin: 10px 5px 10px 5px;
-        text-align: justify;
-        display: flex;
-        justify-content: center;
-    }*/
-
     .staff-name:hover {
         background-color: var(--Color-3);
     }
@@ -300,21 +250,7 @@ html {
         opacity: 0; 
     }
 
-
-    .contact-title {
-        color: var(--Color-4);
-        margin: 10px;
-        display: flex;
-        justify-content: center;
-    }
-    
-
-    .contact-mail {
-        color: var(--Color-4);
-        padding: 10px;
-    }
-
-    .contact-phone {
+    .contact-mail, .contact-phone {
         color: var(--Color-4);
         padding: 10px;
     }
@@ -332,26 +268,17 @@ html {
         border-radius: 3px;
     }
 
-    .ig-link {
+    .ig-link, .fb-link  {
         color: var(--Color-4);
 
     }
 
-    .ig-link-img {
+    .ig-link-img, .fb-link-img {
         max-width: 30px;
         margin: 10px;
     }
 
-    .fb-link {
-        color: var(--Color-4)
-    }
-
-    .fb-link-img {
-        max-width: 30px;
-        margin: 10px;
-    }
-
-    .cc {
+    .cc, .privacy {
         color: var(--Color-4);
         padding-left: 20px
     }
@@ -359,12 +286,6 @@ html {
     .Divider-lng {
         color: var(--Color-4);
     }
-
-    .privacy {
-        color: var(--Color-4);
-        padding-left: 20px
-    }
-
 
 }
 
@@ -413,9 +334,8 @@ html {
     .navbar-ul {
         display: flex;
         justify-content: center;
-        background-color: var(--Color-2);
+        background-color: var(--Color-5);
         padding-top: 1em;
-        border-top: solid 2px var(--Color-1);
         padding-bottom: 20px;
     }
 

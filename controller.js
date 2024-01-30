@@ -93,6 +93,7 @@ function controlNavMobHandler() {
 controlNavMobHandler();
 
 //function to control navbar mobile section navigation taps 
+/*
 const navbarItem = function(element) {
   element.addEventListener('click', function () {
     if (element === navBar1) {
@@ -112,13 +113,14 @@ const navbarItem = function(element) {
       elementsToToggle.forEach(element => element.classList.remove('hidden'));
       contactArea.scrollIntoView({ behavior: 'smooth' });
     }
+
   });
 }
 
 navbarItem(navBar1);
 navbarItem(navBar2);
 navbarItem(navBar3);
-
+*/
 ///language switch
 const navbarLang = function(element) {
   const revertChanges = () => {
@@ -254,3 +256,30 @@ const scrollIntoViewPc = function(element) {
 scrollIntoViewPc(navBig1);
 scrollIntoViewPc(navBig2);
 scrollIntoViewPc(navBig3);
+//
+const scrollToSection = (targetSection, backgroundColor) => {
+  dropdownMenu.classList.add('hidden');
+  elementsToToggle.forEach(element => element.classList.remove('hidden'));
+  targetSection.scrollIntoView({ behavior: 'smooth' });
+
+  // Temporarily change background color with CSS transition
+  targetSection.style.transition = 'background-color 0.5s ease-in-out';
+  targetSection.style.backgroundColor = backgroundColor;
+
+  // Reset background color after the transition ends
+  setTimeout(() => {
+    targetSection.style.transition = '';
+    targetSection.style.backgroundColor = '';
+  }, 800);
+};
+
+const navbarItem = function(element, targetSection, backgroundColor) {
+  element.addEventListener('click', function () {
+    scrollToSection(targetSection, backgroundColor);
+  });
+};
+
+// Usage example:
+navbarItem(navBar1, serviceArea, '#272932');
+navbarItem(navBar2, staffArea, '#272932');
+navbarItem(navBar3, contactArea, '#272932');
