@@ -31,7 +31,12 @@ const staffText = document.querySelector('.staff-text');
 //const galleryTitle = document.querySelector('.gallery-title');
 const reviewsTitle = document.querySelector('.review-title');
 const reviewsLink = document.querySelector('.reviews-learn-more');
+//test area
+const reviewH3 = document.querySelector('.review-h3');
+const reviewSpan = document.querySelector('.review-span');
+const dots = document.querySelectorAll('.dot');
 
+//
 
 const contactTitle = document.querySelector('.contact-title-a');
 const privacy = document.querySelector('.privacy');
@@ -61,11 +66,13 @@ const originalValues = {
 };
 
 const nextReviewNames = [
+  'Antonis Agapitos',
   'Georgia Kokota',
   'Stathis Kakonas'
 ];
 
 const nextReviewSpan = [
+  'Επαγγελματίες, πολύ φιλικοί, και συνεπείς. Κάνουν καλή δουλειά, σε λογικές τιμές',
   'Εξαιρετική δουλειά, με ποιότητα και καλές τιμές. Αξιόπιστοι στους χρόνους. Θεωρώ πως αξίζει να τους εμπιστευτείτε και σίγουρα θα εκτιμηθεί η δουλειά τους και θα γίνετε ευχαριστημένοι πελάτες τους.',
   'Καλοί τεχνίτες και στα δύσκολα! Πολύ αξιόπιστοι!'
 ]
@@ -77,6 +84,7 @@ const elementsToToggle = [
   document.querySelector('.staff-area'),
   document.querySelector('.reviews-main'),
   document.querySelector('.contact-us-container'),
+  document.querySelector('.page-divider')
   //document.querySelector('.gallery')
   //document.querySelector('.footer')
 ];
@@ -277,4 +285,42 @@ const reviewSlideshow = () => {
 
 };
 
-//const reviewli = reviewSlideshow(document.querySelector('. li:nth-child(1)'), 1, 6, 3000);
+//TEST AREA
+const slideshowReviews = (element, interval) => {
+  const reviewH3 = element.querySelector('.review-h3');
+  const reviewSpan = element.querySelector('.review-span');
+  const dots = document.querySelectorAll('.dot');
+
+  const originalName = reviewH3.innerText;
+  const originalSpan = reviewSpan.innerText;
+
+  let currentReviewIndex = 0;
+
+  const updateReview = () => {
+    reviewH3.innerText = nextReviewNames[currentReviewIndex];
+    reviewSpan.innerText = nextReviewSpan[currentReviewIndex];
+
+    // Toggle active class on dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentReviewIndex);
+    });
+
+    currentReviewIndex++;
+
+    // Reset to original values when reaching the end
+    if (currentReviewIndex >= nextReviewNames.length) {
+      currentReviewIndex = 0;
+    }
+  };
+
+  // Initial update
+  updateReview();
+
+  // Set interval for slideshow
+  const intervalId = setInterval(updateReview, interval);
+
+  // Return the intervalId if you want to be able to clear the interval later
+  return intervalId;
+};
+
+const intervalId = slideshowReviews(document.querySelector('.reviews-main'), 6000);
