@@ -17,17 +17,20 @@ const posterT = document.querySelector('.poster-title');
 const liPosters = document.querySelectorAll('.li-poster');
 const serviceTitleText = document.querySelector('.service-title-text');
 const serviceP = document.querySelector('.service-title-p');
+
 //const serviceLearnMore = document.querySelector('.service-learn-more');
 
 const servicePosterTextElements = document.querySelectorAll('.service-poster-text');
 const newTexts = ["Paintjob oven", "Calibre", "10 paint spaces"];
-const newTexts2 = ["Headlight defogging","Car paintjob","waxing","10 paint spaces","Painting oven","Calibre"];
+const newTexts2 = ["Headlight defogging","Car paintjob","waxing","10 paint spaces","Painting oven","Calibre", "Insurance coverage", "A/C", "Electical windows"];
 
 
 const staffTitle = document.querySelector('.staff-title');
 const staffText = document.querySelector('.staff-text');
 //const gallery = document.querySelector('.gallery');
 //const galleryTitle = document.querySelector('.gallery-title');
+const reviewsTitle = document.querySelector('.review-title');
+const reviewsLink = document.querySelector('.reviews-learn-more');
 
 
 const contactTitle = document.querySelector('.contact-title-a');
@@ -47,6 +50,8 @@ const originalValues = {
     servicePosterTextElements: Array.from(servicePosterTextElements).map(servicePosterText => servicePosterText.innerText),
     staffTitle: staffTitle.innerText,
     staffText: staffText.innerText,
+    reviewsTitle: reviewsTitle.innerText,
+    reviewsLink: reviewsLink.innerText,
     //galleryTitle: galleryTitle.innerText,
     contactTitle: contactTitle.innerText,
     privacy: privacy.innerText,
@@ -55,11 +60,22 @@ const originalValues = {
 
 };
 
+const nextReviewNames = [
+  'Georgia Kokota',
+  'Stathis Kakonas'
+];
+
+const nextReviewSpan = [
+  'Εξαιρετική δουλειά, με ποιότητα και καλές τιμές. Αξιόπιστοι στους χρόνους. Θεωρώ πως αξίζει να τους εμπιστευτείτε και σίγουρα θα εκτιμηθεί η δουλειά τους και θα γίνετε ευχαριστημένοι πελάτες τους.',
+  'Καλοί τεχνίτες και στα δύσκολα! Πολύ αξιόπιστοι!'
+]
+
 //const dropdownMenuItem = document.querySelector('.dropdown-menu-show');
 const elementsToToggle = [
   document.querySelector('.main-poster'),
   document.querySelector('.service-area'),
   document.querySelector('.staff-area'),
+  document.querySelector('.reviews-main'),
   document.querySelector('.contact-us-container'),
   //document.querySelector('.gallery')
   //document.querySelector('.footer')
@@ -80,7 +96,6 @@ function controlNavMob() {
     //dropdownMenuItem.classList.toggle('hidden');
     elementsToToggle.forEach(element => element.classList.toggle('hidden'));
   } catch (err) {
-    // Handle errors if needed
     // console.log(err);
   }
 }
@@ -92,35 +107,6 @@ function controlNavMobHandler() {
 
 controlNavMobHandler();
 
-//function to control navbar mobile section navigation taps 
-/*
-const navbarItem = function(element) {
-  element.addEventListener('click', function () {
-    if (element === navBar1) {
-      dropdownMenu.classList.add('hidden');
-      elementsToToggle.forEach(element => element.classList.remove('hidden'));
-      serviceArea.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    if (element === navBar2) {
-      dropdownMenu.classList.add('hidden');
-      elementsToToggle.forEach(element => element.classList.remove('hidden'));
-      staffArea.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    if (element === navBar3) {
-      dropdownMenu.classList.add('hidden');
-      elementsToToggle.forEach(element => element.classList.remove('hidden'));
-      contactArea.scrollIntoView({ behavior: 'smooth' });
-    }
-
-  });
-}
-
-navbarItem(navBar1);
-navbarItem(navBar2);
-navbarItem(navBar3);
-*/
 ///language switch
 const navbarLang = function(element) {
   const revertChanges = () => {
@@ -141,12 +127,13 @@ const navbarLang = function(element) {
     });
     staffTitle.innerText = originalValues.staffTitle;
     staffText.innerText = originalValues.staffText;
+    reviewsTitle.innerText = originalValues.reviewsTitle;
+    reviewsLink.innerText = originalValues.reviewsLink;
     contactTitle.innerText = originalValues.contactTitle;
     privacy.innerText = originalValues.privacy;
     companyName.innerText = originalValues.companyName;
     adressSpan.innerText = originalValues.adressSpan;
-    // Clear original values
-    //originalValues = {};
+
   };
 
   element.addEventListener('click', function () {
@@ -181,6 +168,9 @@ const navbarLang = function(element) {
       staffTitle.innerText = 'EXPERIENCED STAFF';
       staffText.innerText = 'With many years of experience in the fields of car bodywork and painting, our store staff is ready to serve you.';
       //galleryTitle.innerText = 'GALLERY';
+      reviewsTitle.innerText = 'REVIEWS';
+      reviewsLink.innerText = 'learn more';
+
 
       contactTitle.innerText = 'CONTACT US';
       privacy.innerText = 'Privacy Policy';
@@ -196,7 +186,7 @@ console.log(adressSpan.innerText);
 
 //Slideshow for the staff area
 
-const slideshow = (element, startNumber, endNumber, interval) => {
+const slideshowStaff = (element, startNumber, endNumber, interval) => {
   let currentNumber = startNumber;
   let isForward = true; // Indicates whether the slideshow is going forward or backward
 
@@ -232,7 +222,7 @@ const slideshow = (element, startNumber, endNumber, interval) => {
 };
 
 // Run slideshow for the first <li> element
-const intervalId1 = slideshow(document.querySelector('.staff-list li:nth-child(1)'), 1, 6, 3000);
+const intervalId1 = slideshowStaff(document.querySelector('.staff-list li:nth-child(1)'), 1, 6, 3000);
 
 // Run slideshow for the second <li> element
 //const intervalId2 = slideshow(document.querySelector('.staff-list li:nth-child(2)'), 7, 12, 3000);
@@ -279,7 +269,12 @@ const navbarItem = function(element, targetSection, backgroundColor) {
   });
 };
 
-// Usage example:
 navbarItem(navBar1, serviceArea, '#272932');
 navbarItem(navBar2, staffArea, '#272932');
 navbarItem(navBar3, contactArea, '#272932');
+
+const reviewSlideshow = () => {
+
+};
+
+//const reviewli = reviewSlideshow(document.querySelector('. li:nth-child(1)'), 1, 6, 3000);
