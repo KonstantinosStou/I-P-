@@ -258,7 +258,14 @@ scrollIntoViewPc(navBig3);
 const scrollToSection = (targetSection, backgroundColor) => {
   dropdownMenu.classList.add('hidden');
   elementsToToggle.forEach(element => element.classList.remove('hidden'));
-  targetSection.scrollIntoView({ behavior: 'smooth' });
+  // Calculate the height of the fixed header
+  const headerHeight = document.querySelector('.header').offsetHeight;
+
+  // Scroll to the target section, taking into account the header height
+  window.scroll({
+    top: targetSection.offsetTop - headerHeight,
+    behavior: 'smooth'
+  });
 
   // Temporarily change background color with CSS transition
   targetSection.style.transition = 'background-color 0.5s ease-in-out';
