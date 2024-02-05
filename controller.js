@@ -330,4 +330,4 @@ const slideshowReviews = (element, interval) => {
   return intervalId;
 };
 
-const intervalId = slideshowReviews(document.querySelector('.reviews-main'), 6000);
+const intervalId = slideshowReviews(document.querySelector('.reviews-main'), 8000);

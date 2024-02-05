@@ -353,12 +353,17 @@ html {
     .contact-mail, .contact-phone {
         color: var(--Color-4);
         padding: 10px;
+        text-decoration: underline;
     }
 
     .address-a, .address-span {
         color: var(--Color-4);
         padding-left: 20px;
         display: block;
+    }
+
+    .address-a {
+        text-decoration: underline;
     }
 
     .contact-img {
