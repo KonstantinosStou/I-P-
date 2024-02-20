@@ -1,5 +1,8 @@
+//import L from 'leaflet';
+//import 'leaflet-minimap';
 
 // Declarations
+const map = L.map('map').setView([37.94660008981734, 23.728677116284576], 16);
 const navBarIco = document.querySelector('.navbar-icon');
 const dropdownMenu = document.querySelector('.dropdown-mob-sec');
 const navBar1 = document.querySelector('.navbar-span-1');
@@ -331,3 +334,77 @@ const slideshowReviews = (element, interval) => {
 };
 
 const intervalId = slideshowReviews(document.querySelector('.reviews-main'), 8000);
+
+
+//TEST AREA
+const listItems = document.querySelectorAll(".li-poster");
+const texts = [
+  "Καθαρισμός των φαναριών: Αρχικά, τα φανάρια πρέπει να καθαριστούν από τυχόν ρύπους με χρήση νερού ή κατάλληλου καθαριστικού. Μετά τον καθαρισμό, γίνεται χρήση ενός ειδικού προϊόντως ξεθάμπωματος φαναριών. Επίσης, μπορεί να εφαρμοστεί και ένα ειδικό προϊόν προστασίας για να προληφθεί η επανεμφάνιση της θολότητας.",
+
+ "Η διαδικασία βαφής αυτοκινήτου είναι κρίσιμη για τη συντήρηση και την ανανέωση του οχήματος. Περιλαμβάνει την προετοιμασία της επιφάνειας, την εφαρμογή της νέας βαφής και το φινίρισμα για προστασία και λάμψη. Με αυτή τη διαδικασία, το αυτοκίνητο ανανεώνεται εμφανισιακά και προστατεύεται από τη φθορά του χρόνου και των καιρικών συνθηκών.",
+ 
+ "Το γυάλισμα αφαιρεί τις μικρές γρατζουνιές και ατέλειες από την επιφάνεια, προσφέροντας λαμπερό φινίρισμα. Κατόπιν, το κέρωμα προστατεύει τη βαμμένη επιφάνεια από τις καιρικές συνθήκες και τη φθορά.",
+ 
+ "Το συνεργείο μας διαθέτει θέσεις βαφέις και επισκευής για έως 10 αυτοκίνητα.",
+ 
+ "Το χρώμα εφαρμόζεται στο αυτοκίνητο και στη συνέχεια η βαφή θερμαίνεται σε υψηλές θερμοκρασίες στον φούρνο. Αυτό επιτρέπει στη βαφή να στερεώσει και να σκληρύνει, παρέχοντας μια ανθεκτική και αντισκωριακή επιφάνεια. Ο φούρνος βαφής εξασφαλίζει επίσης ομοιόμορφη και λαμπερή εμφάνιση στο τελικό αποτέλεσμα. ",
+ 
+ " Χρησιμοποιείται για την ανύψωση του αυτοκινήτου σε ύψος που επιτρέπει την εύκολη πρόσβαση στα κάτω μέρη του οχήματος, όπως το κάτω μέρος του κινητήρα, το σύστημα εξάτμισης, το σύστημα διεύθυνσης και το σύστημα ανάρτησης.",
+ 
+ "Συνεργαζόμαστε με όλες τις ασφαλιστηκές.",
+ 
+ "Ο καθαρισμός του συστήματος A/C του αυτοκινήτου είναι απαραίτητος για τη διατήρηση της αποτελεσματικότητάς του και την πρόληψη ανεπιθύμητων οσμών και βακτηριδιακής ανάπτυξης",
+
+  
+  "Η επισκευή των ηλεκτρικών παραθύρων περιλαμβάνει τη διάγνωση του προβλήματος, την αντικατάσταση αναλώσιμων μερών, όπως διακόπτες και ασφάλειες, την επισκευή ή αντικατάσταση του ηλεκτρικού μοτέρ, και τέλος τον έλεγχο του συστήματος."];
+let currentSpanIndex = -1;
+
+function addSpan(index) {
+  removeSpan();
+  const span = document.createElement("span");
+  span.textContent = texts[index];
+  span.classList.add("number-span"); // Add a class to the span
+  listItems[index].insertAdjacentElement('afterend', span);
+  currentSpanIndex = index;
+}
+
+function removeSpan() {
+  if (currentSpanIndex !== -1) {
+    const currentSpan = listItems[currentSpanIndex].nextElementSibling;
+    if (currentSpan && currentSpan.classList.contains("number-span")) {
+      currentSpan.parentNode.removeChild(currentSpan);
+    }
+    currentSpanIndex = -1;
+  }
+}
+
+function handleClick(event) {
+  const clickedIndex = Array.from(listItems).indexOf(event.target);
+  if (clickedIndex !== -1) {
+    if (clickedIndex === currentSpanIndex) {
+      removeSpan();
+    } else {
+      addSpan(clickedIndex);
+    }
+  } else {
+    removeSpan();
+  }
+}
+
+// Add event listeners
+listItems.forEach(item => {
+  item.addEventListener("click", handleClick);
+});
+
+document.addEventListener("click", function(event) {
+  if (!event.target.closest(".li-poster")) {
+    removeSpan();
+  }
+});
+
+// Add a tile layer to the map
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([37.94660008981734, 23.728677116284576]).addTo(map);

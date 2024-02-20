@@ -8,9 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-    href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
     rel="stylesheet"
-    />
+    href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""
+  />
+  <script
+    defer
+    src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""
+  ></script>
+  
     <title>I&P Stouraitis</title>
     <!-- For modern browsers -->
     <link rel="icon" type="image/png" sizes="16x16" href="favicon16x16.png">
@@ -20,12 +29,15 @@
     <link rel="apple-touch-icon" href="favicon.ico">
 
     <link rel="stylesheet" href="bodywork.css" />
+
     <script type="module" src="controller.js"></script>
 </head>
 <body>
     <header class="header">
       <section class="logo-container">
         <img src="p&i logo.png" alt="Logo" class="header__logo" />
+        <!--<img src="p&i logo wheel 1.png" class="header__wheel" />-->
+        <!--<img src="p&i logo wheel 1.png" class="header__wheel_2" />-->
       </section>
       <section class="navbar-mob-sec">
         <div class="container">
@@ -252,6 +264,7 @@
           <span class="address-span">Τοποθεσία:</span>
           <a href="https://www.google.com/maps/place/%CE%99.+%26+%CE%A0.+%CE%A3%CF%84%CE%BF%CF%85%CF%81%CE%B1%CE%B9%CF%84%CE%B7%CF%82/@37.9461178,23.7264417,17z/data=!4m10!1m2!2m1!1zz4bOsc69zr_Oss6xz4bOtc-CIM65IM-AIM-Dz4TOv8-Fz4HOsc65z4TOt8-C!3m6!1s0x14a1bd9982252e31:0x23ec7bae89a9a86c!8m2!3d37.9465557!4d23.7287462!15sCi3Phs6xzr3Ov86yzrHPhs61z4Igzrkgz4Agz4PPhM6_z4XPgc6xzrnPhM63z4JaLyItz4bOsc69zr_Oss6xz4bOtc-DIM65IM-AIM-Dz4TOv8-Fz4HOsc65z4TOt8-DkgEQYXV0b19yZXBhaXJfc2hvcJoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSYWJHSmhkR05SRUFF4AEA!16s%2Fg%2F11h0j796pr?entry=ttu" class="address-a">Εθνάρχου Μακαρίου 151, Δάφνη Αττικής 17235</a>
         </div>
+        <div id="map"></div>
         <div class="social-links">
           <a href="https://www.instagram.com/i.p.stour/" class="ig-link"><img src="instagram.png" class="ig-link-img"></a>
           <!--<a href="https://www.flaticon.com/free-icons/instagram-logo" title="instagram logo icons">Instagram logo icons created by Pixel perfect - Flaticon</a>-->
